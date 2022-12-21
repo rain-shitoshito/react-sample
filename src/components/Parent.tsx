@@ -4,7 +4,9 @@ import React, {memo, useState} from 'react';
 /*
 メモ化コンポーネント
 親コンポーネントが再描画されても、引数で渡しているpropsに変更がないかぎり
-基本再描画されない
+再描画されない
+親コンポーネント再描画時は、propsは前回と比較されるが、
+プリミティブ型でない場合参照が代わり変更されたとみなされるため、再描画される。
 */
 type FizzProps = {
     isFizz: boolean
